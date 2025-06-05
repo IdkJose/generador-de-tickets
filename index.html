@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Conference Ticket Generator</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="assets/images/favicon-32x32.png">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <img src="assets/images/logo-mark.svg" alt="Coding Conf Logo" class="logo" />
+      <h1>Tu camino al camino del código empieza aquí!</h1>
+      <p>Asegura tu lugar en la mayor conferencia de código del mundo!</p>
+    </header>
+
+    <form id="ticket-form" novalidate>
+      <label for="avatar">Subir tu foto</label>
+      <div class="upload-box" tabindex="0" aria-label="Upload Avatar">
+        <input type="file" id="avatar" name="avatar" />
+        <img src="assets/images/icon-upload.svg" alt="" />
+        <p>Arrastra y suelta o click para subir tu foto</p>
+        <small>Sube tu foto aquí (max 500KB)</small>
+        <span id="error-avatar" class="error-message"></span>
+      </div>
+
+      <label for="fullName">Tu nombre completo:</label>
+      <input id="fullName" name="fullName" type="text" required />
+      <span id="error-name" class="error-message"></span>
+
+      <label for="email">Dirección email:</label>
+      <input id="email" name="email" type="email" placeholder="example@email.com" required />
+      <span id="error-email" class="error-message"></span>
+
+      <label for="github">Usuario de GitHub</label>
+      <input id="github" name="github" type="text" placeholder="@yourusername" required />
+      <span id="error-github" class="error-message"></span>
+
+      <button type="submit">Generar mi ticket</button>
+    </form>
+
+    <section id="ticket" class="ticket hidden" aria-live="polite">
+      <h2>Felicidades, <span id="name-result"></span>! Tu ticket ha sido generado y está listo.</h2>
+      <p>Hemos enviado tu ticket al email: <span id="email-result"></span>.</p>
+      <div class="ticket-card">
+        <img id="ticket-avatar" src="" alt="Uploaded Avatar" />
+        <div>
+          <h3>Conferencia de código</h3>
+          <p>Jan 31, 2025 / Austin, TX</p>
+          <p>GitHub: <span id="github-result"></span></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

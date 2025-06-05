@@ -1,0 +1,9 @@
+{
+  "homepage": "https://idkjose.github.io/generador-de-tickets/",
+  "scripts": {
+    "deploy": "gh-pages -d ."
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
